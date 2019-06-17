@@ -11,22 +11,21 @@ $(document).ready(function() {
     var userInput = new Locations (city, landmarkVisited, dateOfVisit);
     this.placesArray = [];
     this.placesArray.push(userInput);
-    //var adding = new Locations
+    // (".input1").append(userInput);
 
-    //placesArray.push(adding);
-    //console.log(adding);
-    // locaton.id = assignId();
-    // placesArray.push(Locations);
     console.log(this.placesArray);
     console.log(Locations);
     alert(userInput);
     console.log(userInput);
     console.log(city);
-    alert(city);
-    alert(landmarkVisited);
-    alert(dateOfVisit);
+
 
     event.preventDefault();
+    // $(".input1").append(trip1.city + trip1.landmarkVisited + trip1.dateOfVisit);
+    $(".input1").append(userInput.city + ("<br>"));
+    console.log(trip1);
+
+
   });
   // Business Logic for Location Objects ---------
 
@@ -37,36 +36,36 @@ $(document).ready(function() {
 }
 
 // Locations.prototype.locationFull = function() {
+function locationsDataBase() {
+  this.placesArray =[];
+  this.currentId = 0
+}
+
+locationsDataBase.prototype.addLocation = function(city,landmarkVisited,dateOfVisit) {
+  location.id = this.assignId();
+  this.placesArray.push(location);
+}
 //   return this.city + " " + this.landmarkVisited + " " + this.dateOfVisit;
 // }
   // Business Logic for LocationsDataBase ---------
-  function LocationsDataBase() {
-  this.placesArray =[];
-  this.currentId = 0
-  }
 
-  LocationsDataBase.prototype.addLocation = function(location) {
-    location.id = this.assignId();
-    this.placesArray.push(location);
-  }
-
-  LocationsDataBase.prototype.assignId = function() {
+  locationsDataBase.prototype.assignId = function() {
     this.currentId += 1;
     return this.currentId;
   }
 
 
-  // LocationsDataBase.prototype.deleteLocation = function(id) {
-  //   for (var i=0; i<this.locations.length; i++) {
-  //     if (this.locations[i]) {
-  //       if (this.location[i].id == id) {
-  //         delete this.locations[i];
-  //         return true;
-  //     }
-  //   }
-  // };
-  // return false;
-  // };
-
 
 });
+
+var trip1 = {
+  city: "Seattle",
+  landmarkVisited: "Buildings",
+  dateOfVisit: "Today",
+};
+//
+// var trip2 = {
+//   city: "Atlanta",
+//   landmarkVisited: "concrete",
+//   dateOfVisit: "Yesterday",
+// };
